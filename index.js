@@ -11,10 +11,9 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect('mongodb+srv://h3940180:sEWxY9BxqXbt7U4J@cluster0.az0kmng.mongodb.net/')
-
+mongoose.connect('mongodb+srv://h3940180:sEWxY9BxqXbt7U4J@cluster0.az0kmng.mongodb.net/exerciseDB?retryWrites=true&w=majority')
   .then(() => console.log('MongoDB connected'))
-  .catch((err) => console.error('MongoDB connection error:', err));
+  .catch(err => console.error('MongoDB connection error:', err));
 
 // Basic route to check server
 app.get('/', (req, res) => {
