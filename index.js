@@ -11,10 +11,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect('mongodb+srv://h3940180:sEWxY9BxqXbt7U4J@cluster0.az0kmng.mongodb.net/', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect('mongodb+srv://h3940180:sEWxY9BxqXbt7U4J@cluster0.az0kmng.mongodb.net/')
 
   .then(() => console.log('MongoDB connected'))
   .catch((err) => console.error('MongoDB connection error:', err));
