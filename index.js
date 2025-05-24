@@ -4,12 +4,13 @@ const mongoose = require('mongoose');
 const app = express();
 const User = require('./models/User')
 const Exercise = require('./models/Exercise');
-
+const cors = require('cors');
 
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 mongoose.connect('mongodb+srv://h3940180:sEWxY9BxqXbt7U4J@cluster0.az0kmng.mongodb.net/', {
   useNewUrlParser: true,
